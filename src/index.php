@@ -8,9 +8,9 @@
 <body>
     <h1>Hello Word !</h1>
     <?php
-        $dsn = 'mysql:host=db;dbname=db_symfony;port=3306,charset=utf8mb4';
-        $pdo = new PDO($dsn, 'root', 'rootpassord');
-        var_dump($pdo);
+       // $dsn = 'mysql:host=db;dbname=db_symfony;port=3306,charset=utf8mb4';
+        //$pdo = new PDO($dsn, 'root', 'rootpassord');
+       // var_dump($pdo);
     ?>
 </body>
 </html>
