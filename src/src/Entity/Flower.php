@@ -21,6 +21,10 @@ class Flower
     #[ORM\Column(length: 20)]
     private ?string $color = null;
 
+    #[ORM\ManyToOne(inversedBy: 'flowers')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $id_category = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +50,18 @@ class Flower
     public function setColor(string $color): static
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    public function getIdCategory(): ?Category
+    {
+        return $this->id_category;
+    }
+
+    public function setIdCategory(?Category $id_category): static
+    {
+        $this->id_category = $id_category;
 
         return $this;
     }

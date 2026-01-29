@@ -8,3 +8,6 @@
 - Composer pour PHP
 
 - Symfony 8.x
+    - à installer dans le contenaire à l'aide de Composer.
+
+A partir de cette
