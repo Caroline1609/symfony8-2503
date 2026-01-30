@@ -26,10 +26,10 @@ final class Version20260129090535 extends AbstractMigration
 
         $columns = array_map(fn($c) => $c->getName(), $sm->listTableColumns('flower'));
 
-        if (!in_array('id_category_id', $columns, true)) {
-            $this->addSql('ALTER TABLE flower ADD id_category_id INT NOT NULL');
-            $this->addSql('ALTER TABLE flower ADD CONSTRAINT FK_A7D7C1DAA545015 FOREIGN KEY (id_category_id) REFERENCES category (id)');
-            $this->addSql('CREATE INDEX IDX_A7D7C1DAA545015 ON flower (id_category_id)');
+        if (!in_array('category_id', $columns, true)) {
+            $this->addSql('ALTER TABLE flower ADD category_id INT NOT NULL');
+            $this->addSql('ALTER TABLE flower ADD CONSTRAINT FK_A7D7C1DAA545015 FOREIGN KEY (category_id) REFERENCES category (id)');
+            $this->addSql('CREATE INDEX IDX_A7D7C1DAA545015 ON flower (category_id)');
         }
     }
 
@@ -42,10 +42,10 @@ final class Version20260129090535 extends AbstractMigration
 
         $columns = array_map(fn($c) => $c->getName(), $sm->listTableColumns('flower'));
 
-        if (in_array('id_category_id', $columns, true)) {
+        if (in_array('category_id', $columns, true)) {
             $this->addSql('ALTER TABLE flower DROP FOREIGN KEY IF EXISTS FK_A7D7C1DAA545015');
             $this->addSql('DROP INDEX IDX_A7D7C1DAA545015 ON flower');
-            $this->addSql('ALTER TABLE flower DROP id_category_id');
+            $this->addSql('ALTER TABLE flower DROP category_id');
         }
     }
 }

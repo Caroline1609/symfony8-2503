@@ -23,7 +23,7 @@ class Category
     /**
      * @var Collection<int, Flower>
      */
-    #[ORM\OneToMany(targetEntity: Flower::class, mappedBy: 'id_category', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Flower::class, mappedBy: 'category', orphanRemoval: true)]
     private Collection $flowers;
 
     public function __construct()
